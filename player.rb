@@ -1,5 +1,4 @@
 class Player
-
   attr_accessor :cash
 
   def initialize(name)

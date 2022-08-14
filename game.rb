@@ -1,6 +1,5 @@
 class Game
-
-  def initialize(deck, players)
+  def initialize(deck, _players)
     @deck = deck
     @players = []
   end
