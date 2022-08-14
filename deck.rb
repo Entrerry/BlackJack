@@ -9,7 +9,6 @@ class Deck
     @full_deck = []
     fill_the_deck
     shuffle_cards!
-    p self # отладка
   end
 
   def fill_the_deck
