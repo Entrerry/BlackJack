@@ -1,5 +1,7 @@
-require_relative 'card'
+# frozen_string_literal: true
 
+require_relative 'card'
+# Deck class
 class Deck
   attr_accessor :full_deck
 

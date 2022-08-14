@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Card class
 class Card
   attr_reader :color, :suit, :value, :type
 

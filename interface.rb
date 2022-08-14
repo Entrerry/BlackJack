@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spade = "\u2660"
 # print spade.force_encoding('utf-8')
 
