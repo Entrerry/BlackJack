@@ -23,6 +23,10 @@ class Game
     @players[1].cash -= bet
     @at_stake += (bet * 2)
 
+    puts "Your cash is #{@players[1].cash}"
+    puts "Dealer cash is #{@players[0].cash}"
+    puts "At stake #{@at_stake}"
+
     2.times do
       @players[0].get_card(@deck.first_card)
       @deck.delete_card
