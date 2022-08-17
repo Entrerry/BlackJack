@@ -23,9 +23,13 @@ class Game
     @players[1].cash -= bet
     @at_stake += (bet * 2)
 
+    puts ''
+    puts '$$$$$$$$$$$$$$$$$$$$'
     puts "Your cash is #{@players[1].cash}"
     puts "Dealer cash is #{@players[0].cash}"
     puts "At stake #{@at_stake}"
+    puts '$$$$$$$$$$$$$$$$$$$$'
+    puts ''
 
     2.times do
       @players[0].get_card(@deck.first_card)
@@ -35,14 +39,16 @@ class Game
       @players[1].get_card(@deck.first_card)
       @deck.delete_card
     end
-    puts "Dealer have #{players[0].hand.length} cards"
+    puts "Dealer have #{players[0].hand.length} cards."
+    puts 'These cards are not known now.'
+    puts ''
     puts "You have #{players[1].hand.length}  cards:"
     players[1].show_cards_in_hand
   end
 
   def player_turn
     loop do
-      puts "Your score is #{players[1].score}"
+      puts "(!!!) Your score is #{players[1].score} (!!!)"
       if players[1].score > 21
         puts 'you DIED'
         break
@@ -66,6 +72,7 @@ class Game
         @players[0].get_card(@deck.first_card)
         @deck.delete_card
       else
+        puts ''
         puts "Dealers score is #{players[0].score}"
         @players[0].show_cards_in_hand
         break

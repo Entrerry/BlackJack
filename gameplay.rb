@@ -9,8 +9,9 @@ class Interface
     puts 'Welcome to Black Jack game'
     print 'Input your name: '
     @name = gets.chomp.to_s
-    puts '(1) to start game. (2) to exit.'
+    print '(1) to start game. (2) to exit: '
     ansewr = gets.chomp.to_i
+    print ''
     case ansewr
     when 1 then @game = Game.new
                 @game.start_game(@name)
