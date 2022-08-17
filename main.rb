@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'interface2'
+require_relative 'gameplay'
 
 interface = Interface.new
 

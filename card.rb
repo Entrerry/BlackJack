@@ -37,3 +37,15 @@ class Card
     end
   end
 end
+
+# spade = "\u2660"
+# print spade.force_encoding('utf-8')
+
+# heart = " \u2665"
+# print heart.force_encoding('utf-8')
+
+# diamond = " \u2666"
+# print diamond.force_encoding('utf-8')
+
+# club = " \u2663"
+# print club.force_encoding('utf-8')
