@@ -71,7 +71,7 @@ class Game
 
   def check_result
     if players[1].score > 21 && players[0].score > 21
-      puts 'Both lose.'
+      puts 'Both players lose.'
     elsif players[1].score == 21 && players[0].score == 21 || players[1].score == players[0].score
       puts 'Parity'
       @players[0].cash += bet
