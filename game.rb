@@ -6,6 +6,9 @@ require_relative 'player'
 class Game
   attr_reader :deck, :players, :at_stake, :bet
 
+  DEALER_SCORE_LIMIT = 17
+  WIN_SCORE = 21
+
   def initialize
     @deck = Deck.new
     @players = []
@@ -49,7 +52,7 @@ class Game
   def player_turn
     loop do
       puts "(!!!) Your score is #{players[1].score} (!!!)"
-      if players[1].score > 21
+      if players[1].score > WIN_SCORE
         puts 'you DIED'
         break
       end
@@ -66,9 +69,9 @@ class Game
   end
 
   def dealer_turn
-    return if @players[1].score > 21
+    return if @players[1].score > WIN_SCORE
     loop do
-      if players[0].score < 17
+      if players[0].score < DEALER_SCORE_LIMIT
         @players[0].get_card(@deck.first_card)
         @deck.delete_card
       else
@@ -81,18 +84,18 @@ class Game
   end
 
   def check_result
-    if players[1].score > 21 && players[0].score > 21
+    if players[1].score > WIN_SCORE && players[0].score > WIN_SCORE
       puts 'Both players lose.'
-    elsif players[1].score == 21 && players[0].score == 21 || players[1].score == players[0].score
+    elsif players[1].score == WIN_SCORE && players[0].score == WIN_SCORE || players[1].score == players[0].score
       puts 'Parity'
       @players[0].cash += bet
       @players[1].cash += bet
       @at_stake -= (bet * 2)
-    elsif (players[1].score > players[0].score && players[1].score <= 21) || players[0].score > 21
+    elsif (players[1].score > players[0].score && players[1].score <= WIN_SCORE) || players[0].score > WIN_SCORE
       puts 'You win'
       @players[1].cash += @at_stake
       @at_stake = 0
-    elsif (players[0].score > players[1].score && players[0].score <= 21) || players[1].score > 21
+    elsif (players[0].score > players[1].score && players[0].score <= WIN_SCORE) || players[1].score > WIN_SCORE
       puts 'Dealer win'
       @players[0].cash += @at_stake
       @at_stake = 0
