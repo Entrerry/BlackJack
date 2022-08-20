@@ -14,36 +14,36 @@ class Deck
   def fill_the_deck
     value = 1
     9.times do
-      @full_deck << Card.new('red', 'heart', value += 1, 'numeric')
+      @full_deck << Card.new('heart', value += 1, 'numeric')
     end
-    @full_deck << Card.new('red', 'heart', 11, 'ace')
-    @full_deck << Card.new('red', 'heart', 10, 'king')
-    @full_deck << Card.new('red', 'heart', 10, 'queen')
-    @full_deck << Card.new('red', 'heart', 10, 'jack')
+    @full_deck << Card.new('heart', 11, 'Ace')
+    @full_deck << Card.new('heart', 10, 'King')
+    @full_deck << Card.new('heart', 10, 'Queen')
+    @full_deck << Card.new('heart', 10, 'Jack')
     value = 1
     9.times do
-      @full_deck << Card.new('red', 'diamond', value += 1, 'numeric')
+      @full_deck << Card.new('diamond', value += 1, 'numeric')
     end
-    @full_deck << Card.new('red', 'diamond', 11, 'ace')
-    @full_deck << Card.new('red', 'diamond', 10, 'king')
-    @full_deck << Card.new('red', 'diamond', 10, 'queen')
-    @full_deck << Card.new('red', 'diamond', 10, 'jack')
+    @full_deck << Card.new('diamond', 11, 'Ace')
+    @full_deck << Card.new('diamond', 10, 'King')
+    @full_deck << Card.new('diamond', 10, 'Queen')
+    @full_deck << Card.new('diamond', 10, 'Jack')
     value = 1
     9.times do
-      @full_deck << Card.new('black', 'spade', value += 1, 'numeric')
+      @full_deck << Card.new('spade', value += 1, 'numeric')
     end
-    @full_deck << Card.new('black', 'spade', 11, 'ace')
-    @full_deck << Card.new('black', 'spade', 10, 'king')
-    @full_deck << Card.new('black', 'spade', 10, 'queen')
-    @full_deck << Card.new('black', 'spade', 10, 'jack')
+    @full_deck << Card.new('spade', 11, 'Ace')
+    @full_deck << Card.new('spade', 10, 'King')
+    @full_deck << Card.new('spade', 10, 'Queen')
+    @full_deck << Card.new('spade', 10, 'Jack')
     value = 1
     9.times do
-      @full_deck << Card.new('black', 'club', value += 1, 'numeric')
+      @full_deck << Card.new('club', value += 1, 'numeric')
     end
-    @full_deck << Card.new('black', 'club', 11, 'ace')
-    @full_deck << Card.new('black', 'club', 10, 'king')
-    @full_deck << Card.new('black', 'club', 10, 'queen')
-    @full_deck << Card.new('black', 'club', 10, 'jack')
+    @full_deck << Card.new('club', 11, 'Ace')
+    @full_deck << Card.new('club', 10, 'King')
+    @full_deck << Card.new('club', 10, 'Queen')
+    @full_deck << Card.new('club', 10, 'Jack')
   end
 
   def shuffle_cards!
