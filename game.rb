@@ -52,7 +52,7 @@ class Game
   def player_turn
     puts "(!!!) Your score is #{players[1].score} (!!!)"
     puts "(1) Pass. (2) One more card. (3) Open cards."
-    print "Your chose:"
+    print "Your chose: "
     answer = gets.chomp.to_i
     if answer == 1
       dealer_turn
@@ -80,6 +80,7 @@ class Game
   end
 
   def check_result
+    puts ''
     puts "Your score is #{players[1].score}."
     puts "Dealers score is #{players[0].score}."
     puts "Cards in dealers hand:"
