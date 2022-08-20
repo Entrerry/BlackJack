@@ -11,7 +11,7 @@ class Card
   end
 
   def card_info
-    if type == 'ace'
+    if type == 'Ace'
       puts "#{type} of #{suit} (value 1 or 11)."
     elsif type == 'numeric' && value == 2
       puts "Two of #{suit} (value 2)."
