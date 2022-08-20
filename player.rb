@@ -14,7 +14,7 @@ class Player
 
   def get_card(card)
     @hand << card
-    @score += if card.type == 'ace' && @score >= 11
+    @score += if card.type == 'Ace' && @score >= 11
                 1
               else
                 card.value
