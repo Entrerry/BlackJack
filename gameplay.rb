@@ -18,8 +18,6 @@ class Interface
                 loop do
                   @game.new_round
                   @game.player_turn
-                  @game.dealer_turn
-                  @game.check_result
                   print 'Continue? (y/n):'
                   answer = gets.chomp.to_s
                   if answer == 'n'

@@ -50,40 +50,37 @@ class Game
   end
 
   def player_turn
-    loop do
+    puts "(!!!) Your score is #{players[1].score} (!!!)"
+    puts "(1) Pass. (2) One more card. (3) Open cards."
+    print "Your chose:"
+    answer = gets.chomp.to_i
+    if answer == 1
+      dealer_turn
+    elsif answer == 2
+      @players[1].get_card(@deck.first_card)
+      @deck.delete_card
+      @players[1].show_cards_in_hand
       puts "(!!!) Your score is #{players[1].score} (!!!)"
-      if players[1].score > WIN_SCORE
-        puts 'you DIED'
-        break
-      end
-      print '(1) One more card. (2) Pass: '
-      answer = gets.chomp.to_i
-      if answer == 1
-        @players[1].get_card(@deck.first_card)
-        @deck.delete_card
-        @players[1].show_cards_in_hand
-      else
-        break
-      end
+      puts "Turn goes to Dealer..."
+      dealer_turn
+    elsif answer == 3
+      check_result
     end
   end
 
   def dealer_turn
-    return if @players[1].score > WIN_SCORE
-    loop do
-      if players[0].score < DEALER_SCORE_LIMIT
-        @players[0].get_card(@deck.first_card)
-        @deck.delete_card
-      else
-        puts ''
-        puts "Dealers score is #{players[0].score}"
-        @players[0].show_cards_in_hand
-        break
-      end
+    if @players[0].score < DEALER_SCORE_LIMIT
+      @players[0].get_card(@deck.first_card)
+      @deck.delete_card
+      check_result
+    else 
+      check_result
     end
   end
 
   def check_result
+    puts "Your score is #{players[1].score}."
+    puts "Dealers score is #{players[0].score}."
     if players[1].score > WIN_SCORE && players[0].score > WIN_SCORE
       puts 'Both players lose.'
     elsif players[1].score == WIN_SCORE && players[0].score == WIN_SCORE || players[1].score == players[0].score
