@@ -23,7 +23,15 @@ class Interface
                   if answer == 'n'
                     exit
                   elsif answer == 'y'
+                    if @game.deck.left_in_deck < 6
+                      puts "#{@game.deck.left_in_deck} cards in deck left."
+                      exit
+                    elsif @game.players[0].cash == 0 || @game.players[1].cash == 0
+                      @game.players_score
+                      exit
+                    else
                     next
+                    end
                   end
                 end
     when 2 then exit

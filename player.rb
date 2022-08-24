@@ -14,16 +14,22 @@ class Player
 
   def get_card(card)
     @hand << card
-    @score += if card.type == 'Ace' && @score >= 11
-                1
-              else
-                card.value
-              end
+    @score += card_value(card, @score)
+  end
+
+  def card_value(card, local_score)
+    if card.name == 'Ace' && local_score >= 11
+      return 1
+    else
+      return card.value
+    end
   end
 
   def show_cards_in_hand
+    local_score = 0
     @hand.each do |card|
-      card.card_info
+      card.card_info(local_score)
+      local_score += card_value(card, local_score)
     end
   end
 end

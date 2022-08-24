@@ -12,39 +12,52 @@ class Deck
   end
 
   def fill_the_deck
-    value = 1
-    9.times do
-      @full_deck << Card.new('heart', value += 1, 'numeric')
+    ['heart', 'diamond', 'spade', 'club'].each do |suit|
+      [
+      ['Two', 2], ['Three', 3], ['Four', 4], ['Five', 5], 
+      ['Six', 6], ['Seven', 7], ['Eight', 8], ['Nine', 9],
+      ['Ten', 10], ['Jack', 10], ['Queen', 10], ['King', 10], 
+      ['Ace', 11]  
+      ].each do |card|
+       @full_deck << Card.new(suit, card[1], card[0]) 
+      end
     end
-    @full_deck << Card.new('heart', 11, 'Ace')
-    @full_deck << Card.new('heart', 10, 'King')
-    @full_deck << Card.new('heart', 10, 'Queen')
-    @full_deck << Card.new('heart', 10, 'Jack')
-    value = 1
-    9.times do
-      @full_deck << Card.new('diamond', value += 1, 'numeric')
-    end
-    @full_deck << Card.new('diamond', 11, 'Ace')
-    @full_deck << Card.new('diamond', 10, 'King')
-    @full_deck << Card.new('diamond', 10, 'Queen')
-    @full_deck << Card.new('diamond', 10, 'Jack')
-    value = 1
-    9.times do
-      @full_deck << Card.new('spade', value += 1, 'numeric')
-    end
-    @full_deck << Card.new('spade', 11, 'Ace')
-    @full_deck << Card.new('spade', 10, 'King')
-    @full_deck << Card.new('spade', 10, 'Queen')
-    @full_deck << Card.new('spade', 10, 'Jack')
-    value = 1
-    9.times do
-      @full_deck << Card.new('club', value += 1, 'numeric')
-    end
-    @full_deck << Card.new('club', 11, 'Ace')
-    @full_deck << Card.new('club', 10, 'King')
-    @full_deck << Card.new('club', 10, 'Queen')
-    @full_deck << Card.new('club', 10, 'Jack')
   end
+
+  # def fill_the_deck
+  #   value = 1
+  #   9.times do
+  #     @full_deck << Card.new('heart', value += 1, 'numeric')
+  #   end
+  #   @full_deck << Card.new('heart', 11, 'Ace')
+  #   @full_deck << Card.new('heart', 10, 'King')
+  #   @full_deck << Card.new('heart', 10, 'Queen')
+  #   @full_deck << Card.new('heart', 10, 'Jack')
+  #   value = 1
+  #   9.times do
+  #     @full_deck << Card.new('diamond', value += 1, 'numeric')
+  #   end
+  #   @full_deck << Card.new('diamond', 11, 'Ace')
+  #   @full_deck << Card.new('diamond', 10, 'King')
+  #   @full_deck << Card.new('diamond', 10, 'Queen')
+  #   @full_deck << Card.new('diamond', 10, 'Jack')
+  #   value = 1
+  #   9.times do
+  #     @full_deck << Card.new('spade', value += 1, 'numeric')
+  #   end
+  #   @full_deck << Card.new('spade', 11, 'Ace')
+  #   @full_deck << Card.new('spade', 10, 'King')
+  #   @full_deck << Card.new('spade', 10, 'Queen')
+  #   @full_deck << Card.new('spade', 10, 'Jack')
+  #   value = 1
+  #   9.times do
+  #     @full_deck << Card.new('club', value += 1, 'numeric')
+  #   end
+  #   @full_deck << Card.new('club', 11, 'Ace')
+  #   @full_deck << Card.new('club', 10, 'King')
+  #   @full_deck << Card.new('club', 10, 'Queen')
+  #   @full_deck << Card.new('club', 10, 'Jack')
+  # end
 
   def shuffle_cards!
     3.times do

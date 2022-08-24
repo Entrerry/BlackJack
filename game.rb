@@ -28,8 +28,7 @@ class Game
 
     puts ''
     puts '$$$$$$$$$$$$$$$$$$$$'
-    puts "Your cash is #{@players[1].cash}"
-    puts "Dealer cash is #{@players[0].cash}"
+    players_score
     puts "At stake #{@at_stake}"
     puts '$$$$$$$$$$$$$$$$$$$$'
     puts ''
@@ -105,5 +104,10 @@ class Game
     @players[0].score = 0
     @players[1].hand = []
     @players[1].score = 0
+  end
+
+  def players_score
+    puts "Your cash is #{@players[1].cash}"
+    puts "Dealer cash is #{@players[0].cash}"
   end
 end
