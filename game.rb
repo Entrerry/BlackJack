@@ -50,18 +50,18 @@ class Game
 
   def player_turn
     puts "(!!!) Your score is #{players[1].score} (!!!)"
-    puts "(1) Pass. (2) One more card. (3) Open cards."
-    print "Your chose: "
+    puts '(1) Pass. (2) One more card. (3) Open cards.'
+    print 'Your chose: '
     answer = gets.chomp.to_i
     if answer == 1
       dealer_turn
     elsif answer == 2
       @players[1].get_card(@deck.first_card)
       @deck.delete_card
-      puts "You get one more card. Now your hand is:"
+      puts 'You get one more card. Now your hand is:'
       @players[1].show_cards_in_hand
       puts "(!!!) Your score is #{players[1].score} (!!!)"
-      puts "Turn goes to Dealer..."
+      puts 'Turn goes to Dealer...'
       dealer_turn
     elsif answer == 3
       check_result
@@ -73,7 +73,7 @@ class Game
       @players[0].get_card(@deck.first_card)
       @deck.delete_card
       check_result
-    else 
+    else
       check_result
     end
   end
@@ -82,7 +82,7 @@ class Game
     puts ''
     puts "Your score is #{players[1].score}."
     puts "Dealers score is #{players[0].score}."
-    puts "Cards in dealers hand:"
+    puts 'Cards in dealers hand:'
     @players[0].show_cards_in_hand
     if players[1].score > WIN_SCORE && players[0].score > WIN_SCORE
       puts 'Both players lose.'

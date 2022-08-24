@@ -15,8 +15,8 @@ class Card
   end
 
   def card_info(score)
-    if name == 'Ace' 
-    actual_value = score >= SCROE_LIMIT_FOR_ACE ? ACE_MIN : ACE_MAX
+    if name == 'Ace'
+      actual_value = score >= SCROE_LIMIT_FOR_ACE ? ACE_MIN : ACE_MAX
       puts "#{name} of #{suit} (score = #{actual_value})"
     else
       puts "#{name} of #{suit} (score = #{value})"

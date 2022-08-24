@@ -30,7 +30,7 @@ class Interface
                       @game.players_score
                       exit
                     else
-                    next
+                      next
                     end
                   end
                 end

@@ -19,9 +19,9 @@ class Player
 
   def card_value(card, local_score)
     if card.name == 'Ace' && local_score >= 11
-      return 1
+      1
     else
-      return card.value
+      card.value
     end
   end
 
