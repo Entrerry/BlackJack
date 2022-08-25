@@ -31,11 +31,11 @@ class Deck
   end
 
   def first_card
-    @full_deck.first
+    @full_deck.first #last
   end
 
   def delete_card
-    @full_deck.delete_at(0)
+    @full_deck.delete_at(0) #pop
   end
 
   def left_in_deck

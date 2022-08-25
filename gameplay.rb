@@ -12,29 +12,30 @@ class Interface
     print '(1) to start game. (2) to exit: '
     ansewr = gets.chomp.to_i
     print ''
-    case ansewr
-    when 1 then @game = Game.new
-                @game.start_game(@name)
-                loop do
-                  @game.new_round
-                  @game.player_turn
-                  print 'Continue? (y/n): '
-                  answer = gets.chomp.to_s
-                  if answer == 'n'
-                    exit
-                  elsif answer == 'y'
-                    if @game.deck.left_in_deck < 6
-                      puts "#{@game.deck.left_in_deck} cards in deck left."
-                      exit
-                    elsif @game.players[0].cash == 0 || @game.players[1].cash == 0
-                      @game.players_score
-                      exit
-                    else
-                      next
-                    end
-                  end
-                end
-    when 2 then exit
+    if ansewr == 1
+      @game = Game.new
+      @game.start_game(@name)
+      loop do
+        @game.new_round
+        @game.player_turn
+        print 'Continue? (y/n): '
+        answer = gets.chomp.to_s
+        if answer == 'n'
+          exit
+        elsif answer == 'y'
+          if @game.deck.left_in_deck < 6
+            puts "#{@game.deck.left_in_deck} cards in deck left."
+            exit
+          elsif @game.players[0].cash == 0 || @game.players[1].cash == 0
+            @game.players_score
+            exit
+          else
+            next
+          end
+        end
+      end
+    else
+      exit
     end
   end
 end
